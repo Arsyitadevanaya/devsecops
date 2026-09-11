@@ -62,7 +62,7 @@ mkdir -p ~/devsecops-lab/{app,policy,reports,sbom,keys}
 cd ~/devsecops-lab
 ```
 
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
 ##### Keterangan:
 
@@ -76,7 +76,7 @@ cd ~/devsecops-lab
 ```bash
 docker version
 ```
-![alt text](image.png)
+![alt text](img/image.png)
 
 - `Fungsi:` Menampilkan versi lengkap dari Docker Engine, baik sisi Client maupun Server (Daemon).
 - `Mengapa Detail Ini Penting:` Hasil scan kerentanan container sangat bergantung pada versi runtime Docker yang digunakan.
@@ -84,14 +84,14 @@ docker version
 ```bash
 docker compose version
 ```
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 - `Fungsi:` Memeriksa apakah utilitas orkestrasi Docker Compose telah terpasang dan memastikan versi yang aktif adalah v2 (berbentuk plugin terintegrasi docker compose, bukan skrip v1 terdahulu docker-compose).
 
 ```bash
 git --version
 ```
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 - `Fungsi:` Memeriksa versi Version Control System (VCS) Git.
 - `Mengapa Detail Ini Penting:` Diperlukan untuk memastikan fitur audit jejak commit dan pengintegrasian skrip otomatisasi pipeline bekerja sesuai ekspektasi.
@@ -99,7 +99,7 @@ git --version
 ```bash
 openssl version
 ```
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 - `Fungsi:` Menampilkan versi pustaka dan alat perintah OpenSSL pada sistem host.
 - `Mengapa Detail Ini Penting:` Digunakan untuk mengonfirmasi pustaka kriptografi yang akan menangani enkripsi, dekripsi, serta pembuatan sertifikat/kunci keamanan.
@@ -107,7 +107,7 @@ openssl version
 ```bash
 curl --version
 ```
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 - `Fungsi:` Menampilkan versi utilitas pengirim request HTTP/HTTPS curl beserta pustaka enkripsi yang didukungnya (seperti OpenSSL/LibreSSL).
 - `Mengapa Detail Ini Penting:` Menguji ketersediaan utilitas untuk keperluan API security testing atau pengunduhan skrip otomatisasi.
@@ -115,7 +115,7 @@ curl --version
 ```bash
 docker info --format '{{json .SecurityOptions}}'
 ```
-![alt text](image-5.png)
+![alt text](img/image-5.png)
 
 ##### Keterangan
 - `docker info:` Mengambil metrik teknis dan informasi tingkat tinggi mengenai konfigurasi sistem serta Docker Daemon.
@@ -125,12 +125,12 @@ docker info --format '{{json .SecurityOptions}}'
 
 | Perintah | Hasil / Catatan |
 | --- | --- |
-| `docker version` | ![alt text](image.png) |
-| `docker compose version` | ![alt text](image-1.png) |
-| `git --version` | ![alt text](image-2.png) |
-| `openssl version` | ![alt text](image-3.png) |
-| `curl --version` | ![alt text](image-4.png) |
-| `docker info --format '{{json .SecurityOptions}}'` | ![alt text](image-5.png) |
+| `docker version` | ![alt text](img/image.png) |
+| `docker compose version` | ![alt text](img/image-1.png) |
+| `git --version` | ![alt text](img/image-2.png) |
+| `openssl version` | ![alt text](img/image-3.png) |
+| `curl --version` | ![alt text](img/image-4.png) |
+| `docker info --format '{{json .SecurityOptions}}'` | ![alt text](img/image-5.png) |
 
 ## 4. Jawaban Evaluasi & Latihan Mandiri
 ### 4.1 Mengapa DevSecOps tidak dapat direduksi menjadi penambahan scanner pada pipeline?
