@@ -86,11 +86,11 @@ Perbedaan penanganan request mengikuti model tersebut. Apache menggunakan *proce
 
 Apache httpd bekerja dengan model *process/thread per request*. Parent process hanya bertugas menerima koneksi, membaca konfigurasi, dan mengelola *pool*; setiap request yang masuk dialokasikan ke satu unit kerja (process atau thread) dan unit tersebut fokus sampai request selesai. Peta konsep berikut memetakan hubungan antara proses, thread, pool, sifat blocking, pilihan MPM, serta peran Apache di dalam lab.
 
-![alt text](<./img/Peta Konsep Cara Kerja Apache httpd.png>)
+![Peta Konsep Cara Kerja Apache httpd](<img/Peta Konsep Cara Kerja Apache httpd.png>)
 
 ### 2.3 Peta Konsep: Cara Kerja Nginx
 
-![alt text](<./img/Infografik Cara Kerja Nginx Berbasis Event-Driven.png>)
+![Infografik Cara Kerja Nginx Berbasis Event-Driven](<img/Infografik Cara Kerja Nginx Berbasis Event-Driven.png>)
 
 Nginx bekerja dengan model *event-driven asynchronous*. Master process hanya bertugas membaca konfigurasi, membuka socket listener, lalu membuat dan memantau worker. Semua request dikerjakan oleh worker dengan jumlah tetap, dan jumlah worker tidak bergantung pada jumlah koneksi aktif.
 
@@ -101,7 +101,7 @@ Event yang datang selalu diterima dan diproses sebanyak mungkin dalam satu putar
 
 ### 2.4 HTTP Routing, Reverse Proxy, Header Forwarding
 
-![alt text](<./img/Peta Konsep Keamanan Proxy Bertingkat.png>)
+![Peta Konsep Keamanan Proxy Bertingkat](<img/Peta Konsep Keamanan Proxy Bertingkat.png>)
 
 HTTP memakai pola request–response, dan reverse proxy menjaga konteks request dengan menetapkan header seperti `X-Forwarded-For`, `X-Forwarded-Proto`, `X-Forwarded-Port`, dan `Host`. Header ini hanya dapat dipercaya bila request benar-benar melewati proxy; jika backend dapat diakses langsung, penyerang dapat mengirim *fake header* yang memengaruhi log, URL absolut, dan keputusan keamanan. Karena itu, *trust boundary* dijaga melalui topologi network (backend tanpa *published port*) dan pembatasan proxy terpercaya.
 
